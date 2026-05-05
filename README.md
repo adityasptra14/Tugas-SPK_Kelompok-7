@@ -4,8 +4,13 @@ Melalui aplikasi ini, pengguna dapat memasukkan beberapa alternatif kost beserta
 Dengan pendekatan ini, proses pemilihan kost menjadi lebih efisien, transparan, dan tidak subjektif, sehingga membantu pengguna dalam mengambil keputusan yang lebih tepat sesuai kebutuhan.
 
 ## Fitur
-- Input data kost
-- Ranking otomatis
+- Input data kost (multi alternatif)
+- Perhitungan otomatis menggunakan metode SAW
+- Sistem ranking kost terbaik
+- Rekomendasi kost paling optimal
+- Tampilan UI modern dan interaktif
+- Mode terang (light) dan gelap (dark)
+- Validasi input data
 
 ## Cara Menjalankan
 1. Download project
