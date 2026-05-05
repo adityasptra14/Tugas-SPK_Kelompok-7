@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK Pemilihan Kost</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <div>
+            <h1>SmartKost Decision</h1>
+            <p class="subtitle">Sistem Pendukung Keputusan dalam memilih Kost menggunakan Metode SAW</p>
+        </div>
+        <button class="toggle-theme" onclick="toggleTheme()" id="themeBtn">🌙</button>
+    </header>
+
+    <!-- FORM -->
+    <section class="card">
+        <h3>Input Spesifikasi Kost</h3>
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Nama Kost</label>
+                <input type="text" id="nama" placeholder="Contoh: Kost Melati">
+            </div>
+
+            <div class="input-group">
+                <label>Harga</label>
+                <input type="text" id="harga" placeholder="Rp" onkeyup="formatRupiah(this)">
+            </div>
+
+            <div class="input-group">
+                <label>Jarak ke Kampus (km)</label>
+                <input type="number" id="jarak" placeholder="Contoh: 2">
+            </div>
+
+            <div class="input-group">
+                <label>Kamar Mandi</label>
+                <select id="km">
+                    <option value="2">Dalam</option>
+                    <option value="1">Luar</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Listrik</label>
+                <select id="listrik">
+                    <option value="2">Termasuk</option>
+                    <option value="1">Sendiri</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>AC</label>
+                <select id="ac">
+                    <option value="2">AC</option>
+                    <option value="1">Non AC</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Ukuran (m²)</label>
+                <input type="number" id="ukuran" placeholder="Contoh: 12">
+            </div>
+
+            <div class="input-group">
+                <label>Rating (0 - 5)</label>
+                <input type="number" id="rating" min="0" max="5" step="0.1">
+            </div>
+
+        </div>
+
+        <button class="btn-primary" onclick="tambahData()">+ Tambah Data</button>
+    </section>
+
+    <!-- DATA -->
+    <section class="card">
+        <div class="card-header">
+            <h3>Data Kost</h3>
+            <span class="badge" id="jumlahData">0 Data</span>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="tabelData">
+                 <colgroup>
+                    <col style="width:14%">
+                    <col style="width:18%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:12%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:8%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Harga</th>
+                        <th>Jarak</th>
+                        <th>KM</th>
+                        <th>Listrik</th>
+                        <th>AC</th>
+                        <th>Ukuran</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="action-box">
+        <button class="btn-success" onclick="hitungSAW()">⚡ Proses Ranking</button>
+    </div>
+
+    <!-- HASIL -->
+    <section class="card">
+        <h3>Hasil Ranking</h3>
+        <div class="table-wrapper">
+            <table id="tabelHasil">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nama</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- KESIMPULAN -->
+    <section class="card highlight" id="kesimpulanBox" style="display:none;">
+        <h3>🏆 Rekomendasi Terbaik</h3>
+        <p id="kesimpulanText"></p>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
