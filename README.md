@@ -9,4 +9,4 @@ Dengan pendekatan ini, proses pemilihan kost menjadi lebih efisien, transparan, 
 
 ## Cara Menjalankan
 1. Download project
-2. Buka file index.html di browser
+2. Buka file main.html di browser
